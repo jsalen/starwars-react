@@ -1,0 +1,35 @@
+.navigation {
+  padding: 0 1.6rem;
+  width: 100%;
+  background: var(--color-primary);
+}
+
+.navigation__list {
+  display: flex;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  list-style: none;
+}
+
+.navigation__list::-webkit-scrollbar {
+  display: none;
+}
+
+.navigation__item {
+  width: 100%;
+  padding: 1rem 1.6rem;
+}
+
+.navigation__item a {
+  color: var(--color-secondary);
+  font-family: 'Kanit', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.4rem;
+}
+.navigation__item a[aria-current='page'] {
+  border-bottom: 2px solid white;
+  padding-bottom: 2px;
+}

@@ -6,20 +6,21 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #151516;
+  background-color: var(--color-primary);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .header__title {
+  font-family: 'Kanit', sans-serif;
   font-size: 3.2rem;
   font-weight: 700;
-  color: #f8f7ff;
+  color: var(--color-secondary);
 }
 
 .header__quote {
   font-size: 1.4rem;
   font-style: italic;
-  color: #c5c5c5;
+  color: var(--color-light-grey);
 }
 
 @media (min-width: 460px) {

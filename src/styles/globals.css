@@ -1,3 +1,9 @@
+:root {
+  --color-primary: #151516;
+  --color-secondary: #f8f7ff;
+  --color-light-grey: #c5c5c5;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,4 +13,5 @@
 html {
   font-family: 'Fredoka', sans-serif;
   font-size: 62.5%;
+  background-color: var(--color-primary);
 }

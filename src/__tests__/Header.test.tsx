@@ -5,7 +5,7 @@ describe('<Header />', () => {
   test('renders content without crashing', () => {
     render(<Header />)
 
-    expect(screen.getByText('Star Wars')).toBeInTheDocument()
+    expect(screen.getByText('STAR WARS')).toBeInTheDocument()
   })
 
   test('renders a quote', () => {

@@ -7,7 +7,7 @@ interface Props {
 export const Header = ({ quote }: Props) => {
   return (
     <header className="header">
-      <p className="header__title">Star Wars</p>
+      <p className="header__title">STAR WARS</p>
       {quote && <q className="header__quote">{quote}</q>}
     </header>
   )

@@ -1,38 +1,40 @@
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+
+import '../../styles/components/navigation.css'
 
 export const Navigation = () => {
   return (
     <nav className="navigation">
       <ul className="navigation__list">
         <li className="navigation__item">
-          <Link to="/" className="navigation__link">
+          <NavLink to="/" className="navigation__link">
             Home
-          </Link>
+          </NavLink>
         </li>
         <li className="navigation__item">
-          <Link to="/films" className="navigation__link">
+          <NavLink to="/films" className="navigation__link">
             Films
-          </Link>
+          </NavLink>
         </li>
         <li className="navigation__item">
-          <Link to="/planets" className="navigation__link">
+          <NavLink to="/planets" className="navigation__link">
             Planets
-          </Link>
+          </NavLink>
         </li>
         <li className="navigation__item">
-          <Link to="/species" className="navigation__link">
+          <NavLink to="/species" className="navigation__link">
             Species
-          </Link>
+          </NavLink>
         </li>
         <li className="navigation__item">
-          <Link to="/starships" className="navigation__link">
+          <NavLink to="/starships" className="navigation__link">
             Starships
-          </Link>
+          </NavLink>
         </li>
         <li className="navigation__item">
-          <Link to="/vehicles" className="navigation__link">
+          <NavLink to="/vehicles" className="navigation__link">
             Vehicles
-          </Link>
+          </NavLink>
         </li>
       </ul>
     </nav>
