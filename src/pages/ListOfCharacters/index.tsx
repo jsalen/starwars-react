@@ -17,12 +17,12 @@ export const ListOfCharacters = () => {
   return (
     <section className="list">
       <h2>List of Characters</h2>
-      <ul>
+      <section>
         {characters.length > 0 &&
           characters.map((character: People) => (
             <Character key={character.name} character={character} />
           ))}
-      </ul>
+      </section>
     </section>
   )
 }

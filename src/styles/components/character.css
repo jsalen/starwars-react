@@ -7,13 +7,19 @@
   background-color: var(--color-light-grey);
   border-radius: 4px;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s ease;
+}
+
+.character:hover {
+  cursor: pointer;
+  opacity: 0.7;
 }
 
 .character__header {
   position: relative;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
-  background-color: rgb(238, 241, 23);
+  background-color: rgb(182, 185, 14);
 }
 
 .character__header img {
@@ -28,11 +34,11 @@
 }
 
 .male {
-  background-color: #1212c7;
+  background-color: #0d0d95;
 }
 
 .female {
-  background-color: #db0b9d;
+  background-color: #be0a88;
 }
 
 .character__content {
