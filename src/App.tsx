@@ -1,11 +1,10 @@
 import { useState } from 'react'
-import { Route, Routes, useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import { Header } from './components/Header'
 import { Loader } from './components/Loader'
 import { Navigation } from './components/Navigation'
 import { Pagination } from './components/Pagination'
-import { Films } from './pages/Films'
-import { People } from './pages/People'
+import { Routing } from './routes'
 import useFetch from './hooks/useFetch'
 
 function App() {
@@ -23,16 +22,7 @@ function App() {
         <Loader />
       ) : (
         <>
-          <Routes>
-            <Route
-              path="/"
-              element={<People characters={data} error={error} />}
-            />
-            <Route
-              path="/films"
-              element={<Films films={data} error={error} />}
-            />
-          </Routes>
+          <Routing data={data} error={error} />
           {totalPages > 1 && (
             <Pagination
               currentPage={currentPage}
