@@ -1,7 +1,5 @@
 .character {
   width: 100%;
-  min-width: 320px;
-  max-width: 410px;
   display: grid;
   grid-template-rows: 60px 1fr;
   background-color: var(--color-light-grey);

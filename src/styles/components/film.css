@@ -1,8 +1,6 @@
 .film {
   padding: 2.1rem;
   width: 100%;
-  min-width: 320px;
-  max-width: 410px;
   display: grid;
   grid-template-rows: 80px 1fr 30px;
   border-radius: 4px;
