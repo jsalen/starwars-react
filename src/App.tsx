@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { Header } from './components/Header'
+import { Loader } from './components/Loader'
 import { Navigation } from './components/Navigation'
+import { Pagination } from './components/Pagination'
 import { ListOfCharacters } from './pages/ListOfCharacters'
 import useFetch from './hooks/useFetch'
-import { Pagination } from './components/Pagination'
 
 function App() {
   const [currentPage, setCurrentPage] = useState(1)
@@ -17,7 +18,7 @@ function App() {
       <Header quote="Cita de Star Wars..." />
       <Navigation />
       {loading ? (
-        <div>Loading...</div>
+        <Loader />
       ) : (
         <>
           <Routes>
