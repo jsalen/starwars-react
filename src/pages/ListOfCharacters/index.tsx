@@ -1,28 +1,28 @@
 import { Character } from '../../components/Character'
-import useFetchPeople from '../../hooks/useFetchPeople'
 
 import '../../styles/pages/list-of-characters.css'
 
-export const ListOfCharacters = () => {
-  const { characters, loading, error } = useFetchPeople()
+interface Props {
+  characters: People[]
+  error: boolean
+}
 
-  if (loading) {
-    return <p>Loading...</p>
-  }
-
-  if (error) {
-    return <p>Error</p>
-  }
-
+export const ListOfCharacters = ({ characters, error }: Props) => {
   return (
-    <section className="list">
-      <h2>List of Characters</h2>
-      <section>
-        {characters.length > 0 &&
-          characters.map((character: People) => (
-            <Character key={character.name} character={character} />
-          ))}
-      </section>
-    </section>
+    <>
+      {error && <div>Something went wrong</div>}
+      {!error && characters.length === 0 && <div>No characters found</div>}
+      {!error && characters.length > 0 && (
+        <section className="list">
+          <h2>List of Characters</h2>
+          <section>
+            {characters.length > 0 &&
+              characters.map((character: People) => (
+                <Character key={character.name} character={character} />
+              ))}
+          </section>
+        </section>
+      )}
+    </>
   )
 }

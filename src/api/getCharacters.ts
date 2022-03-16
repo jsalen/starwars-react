@@ -1,8 +1,8 @@
 import apiClient from './config'
 
-export default async function getCharacters(){
+export default async function getCharacters(page: number) {
   try {
-    const response = await apiClient.get('/people')
+    const response = await apiClient.get(`/people/?page=${page}`)
 
     return response.data
   } catch (error) {

@@ -1,24 +1,26 @@
 import { useState, useEffect } from 'react'
 import getCharacters from '../api/getCharacters'
 
-export default function useFetchPeople() {
+export default function useFetch(page: number) {
   const [characters, setCharacters] = useState<People[]>([])
+  const [totalPages, setTotalPages] = useState(0)
   const [loading, setLoading] = useState(false)
-  const [error, setError] = useState(null)
+  const [error, setError] = useState(false)
 
   useEffect(() => {
     setLoading(true)
-    getCharacters()
+    getCharacters(page)
       .then((data) => {
         setCharacters(data.results)
+        setTotalPages(Math.ceil(data.count / 10))
         setLoading(false)
       })
 
       .catch((error) => {
         setError(error)
-        setLoading(false)
+        setLoading(true)
       })
-  }, [])
+  }, [page])
 
-  return { characters, loading, error }
+  return { characters, totalPages, loading, error }
 }
