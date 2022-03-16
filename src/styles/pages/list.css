@@ -1,5 +1,4 @@
 .list {
-  padding-bottom: 4rem;
   width: 100%;
   background-color: var(--color-secondary);
 }
@@ -14,10 +13,11 @@
 }
 
 .list__articles {
+  padding: 0 1rem 4rem;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 380px));
   grid-gap: 1.8rem;
-  justify-items: center;
+  justify-content: center;
   user-select: none;
 }
