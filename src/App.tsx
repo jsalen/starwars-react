@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useLocation } from 'react-router-dom'
 import { Header } from './components/Header'
 import { Loader } from './components/Loader'
 import { Navigation } from './components/Navigation'
@@ -8,8 +8,9 @@ import { ListOfCharacters } from './pages/ListOfCharacters'
 import useFetch from './hooks/useFetch'
 
 function App() {
+  const { pathname } = useLocation()
   const [currentPage, setCurrentPage] = useState(1)
-  const { characters, totalPages, loading, error } = useFetch(currentPage)
+  const { data, totalPages, loading, error } = useFetch(pathname, currentPage)
 
   const onPageChange = (page: number) => setCurrentPage(page)
 
@@ -24,9 +25,7 @@ function App() {
           <Routes>
             <Route
               path="/"
-              element={
-                <ListOfCharacters characters={characters} error={error} />
-              }
+              element={<ListOfCharacters characters={data} error={error} />}
             />
           </Routes>
           <Pagination
