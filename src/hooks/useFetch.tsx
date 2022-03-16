@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import getData from '../api/getData'
 
 export default function useFetch(location: string, page: number) {
-  const [data, setData] = useState<People[] | any>([])
+  const [data, setData] = useState<People[] | Films[] | any>([])
   const [totalPages, setTotalPages] = useState(0)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)

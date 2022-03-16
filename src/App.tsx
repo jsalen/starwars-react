@@ -4,7 +4,8 @@ import { Header } from './components/Header'
 import { Loader } from './components/Loader'
 import { Navigation } from './components/Navigation'
 import { Pagination } from './components/Pagination'
-import { ListOfCharacters } from './pages/ListOfCharacters'
+import { Films } from './pages/Films'
+import { People } from './pages/People'
 import useFetch from './hooks/useFetch'
 
 function App() {
@@ -25,14 +26,20 @@ function App() {
           <Routes>
             <Route
               path="/"
-              element={<ListOfCharacters characters={data} error={error} />}
+              element={<People characters={data} error={error} />}
+            />
+            <Route
+              path="/films"
+              element={<Films films={data} error={error} />}
             />
           </Routes>
-          <Pagination
-            currentPage={currentPage}
-            totalPages={totalPages}
-            onPageChange={onPageChange}
-          />
+          {totalPages > 1 && (
+            <Pagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={onPageChange}
+            />
+          )}
         </>
       )}
     </>
