@@ -21,21 +21,6 @@ export const Navigation = () => {
             Planets
           </NavLink>
         </li>
-        <li className="navigation__item">
-          <NavLink to="/species" className="navigation__link">
-            Species
-          </NavLink>
-        </li>
-        <li className="navigation__item">
-          <NavLink to="/starships" className="navigation__link">
-            Starships
-          </NavLink>
-        </li>
-        <li className="navigation__item">
-          <NavLink to="/vehicles" className="navigation__link">
-            Vehicles
-          </NavLink>
-        </li>
       </ul>
     </nav>
   )
