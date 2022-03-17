@@ -5,10 +5,10 @@ export const formatPopulation = (population: string) => {
 
   if (num > 999 && num < 1000000) {
     return num / 1000 + 'K'
-  } else if (num > 1000000) {
+  } else if (num >= 1000000) {
     return num / 1000000 + 'M'
-  } else if (num < 900) {
-    return num
+  } else if (num <= 999) {
+    return num.toString()
   }
 }
 
