@@ -1,4 +1,5 @@
 import '../../styles/components/planet.css'
+import { formatNumber, formatPopulation } from '../../utils'
 
 interface Props {
   planet: Planets
@@ -13,19 +14,27 @@ export const Planet = ({ planet }: Props) => {
       <section className="planet__info">
         <div className="planet__info-item">
           <span className="planet__info-label">Population:</span>
-          <span className="planet__info-value">{planet.population}</span>
+          <span className="planet__info-value">
+            {formatPopulation(planet.population)}
+          </span>
         </div>
         <div className="planet__info-item">
           <span className="planet__info-label">Rotation Period:</span>
-          <span className="planet__info-value">{planet.rotation_period}</span>
+          <span className="planet__info-value">
+            {planet.rotation_period} hours
+          </span>
         </div>
         <div className="planet__info-item">
           <span className="planet__info-label">Orbital Period:</span>
-          <span className="planet__info-value">{planet.orbital_period}</span>
+          <span className="planet__info-value">
+            {planet.orbital_period} days
+          </span>
         </div>
         <div className="planet__info-item">
           <span className="planet__info-label">Diameter:</span>
-          <span className="planet__info-value">{planet.diameter}</span>
+          <span className="planet__info-value">
+            {formatNumber(planet.diameter)} km
+          </span>
         </div>
         <div className="planet__info-item">
           <span className="planet__info-label">Climate:</span>
