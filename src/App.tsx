@@ -10,25 +10,31 @@ import useFetch from './hooks/useFetch'
 function App() {
   const { pathname } = useLocation()
   const [currentPage, setCurrentPage] = useState(1)
-  const { data, totalPages, loading, error } = useFetch(pathname, currentPage)
+  const { data, loading, error } = useFetch(pathname, currentPage)
+  const { results, count } = data || {}
+  const totalPages = Math.ceil(count / 10)
 
   const onPageChange = (page: number) => setCurrentPage(page)
 
   return (
     <>
-      <Header quote="Cita de Star Wars..." />
+      <Header quote={'Cita de Star Wars...'} />
       <Navigation />
       {loading ? (
         <Loader />
       ) : (
         <>
-          <Routing data={data} error={error} />
-          {totalPages > 1 && (
-            <Pagination
-              currentPage={currentPage}
-              totalPages={totalPages}
-              onPageChange={onPageChange}
-            />
+          {!loading && data && (
+            <>
+              <Routing data={results} error={error} />
+              {totalPages > 1 && (
+                <Pagination
+                  currentPage={currentPage}
+                  totalPages={totalPages}
+                  onPageChange={onPageChange}
+                />
+              )}
+            </>
           )}
         </>
       )}

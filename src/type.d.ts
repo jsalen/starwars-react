@@ -50,3 +50,10 @@ interface Planets {
   created: string
   edited: string
 }
+
+type SWResponse = {
+  count: integer
+  next: string
+  previous: string
+  results: array
+}
