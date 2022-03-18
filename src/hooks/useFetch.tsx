@@ -1,4 +1,4 @@
-import { useEffect, useReducer, useRef } from 'react'
+import { useEffect, useReducer } from 'react'
 import getData from '../api/getData'
 
 interface State {
@@ -13,7 +13,6 @@ type Action =
   | { type: 'error'; payload: boolean }
 
 function useFetch(location: string, page: number): State {
-  const cancelRequest = useRef<boolean>(false)
   const initialState: State = {
     error: false,
     data: undefined,
@@ -42,21 +41,15 @@ function useFetch(location: string, page: number): State {
       try {
         const response = await getData(location, page)
 
-        if (cancelRequest.current) return
+        console.log(response)
 
         dispatch({ type: 'fetched', payload: response.data })
       } catch (error) {
-        if (cancelRequest.current) return
-
         dispatch({ type: 'error', payload: true })
       }
     }
 
     void fetchData()
-
-    return () => {
-      cancelRequest.current = true
-    }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location, page])
