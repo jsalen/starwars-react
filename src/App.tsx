@@ -19,7 +19,7 @@ function App() {
   return (
     <>
       <Header quote={'Cita de Star Wars...'} />
-      <Navigation />
+      <Navigation onPageChange={onPageChange} />
       {loading ? (
         <Loader />
       ) : (
